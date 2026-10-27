@@ -1,0 +1,6 @@
+# Cloudflare Pages: die technische Adresse *.pages.dev nicht indexieren – Hauptadresse ist https://www.rubedo-spa.de
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex
