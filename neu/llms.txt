@@ -73,10 +73,10 @@ Gründerin: Monica Galletti, CIDESCO Beauty Therapist · Gründerin
 - [Peeling — die Haut und ihr Erneuerungsrhythmus](https://qivox1.github.io/magazin/peeling-minden/): Wie sich die Haut im Zellzyklus selbst erneuert — und wie ein abgestimmtes Enzym- oder Fruchtsäure-Peeling im Rubedo Spa in Minden ihn begleitet.
 - [Das Lymphsystem und die Haut — Presso-Massage und warum Druck zählt](https://qivox1.github.io/magazin/lymphsystem/): Lymphsystem und Haut: Was pneumatische Kompression bewirken kann und wie die Presso-Massage bei Rubedo ansetzt. Mit Rubedo Impuls.
 - [Longevity in Minden — Was modernes Wellness wirklich bedeutet](https://qivox1.github.io/magazin/wellness-minden/): Was Longevity wirklich bedeutet: Qualität der Jahre statt Anti-Aging — kleine Hebel für den Alltag und die vier Dimensionen des Rubedo Spa in Minden.
-- [Berührung als Wirkstoff — die Biologie der Massage](https://qivox1.github.io/magazin/beruehrung/): Was bewusster Körperkontakt mit Nervensystem, Oxytocin und der Haut machen kann. Neurobiologie der Berührung.
+- [Berührung — die Biologie der Massage](https://qivox1.github.io/magazin/beruehrung/): Was bewusster Körperkontakt mit Nervensystem, Oxytocin und der Haut machen kann. Neurobiologie der Berührung.
 - [Was bedeutet Rubedo?](https://qivox1.github.io/magazin/was-ist-rubedo/): Rubedo Spa ist ein Longevity-Studio in Minden, geführt von Monica Galletti: Haut, Vitalität, Körper und Atem als ein System.
 - [Raindrop-Massage — Die Sprache der Essenzen](https://qivox1.github.io/magazin/raindrop-massage/): Ein Aroma-Ritual aus Duft, Berührung und Zeit: VitaFlex-Fußarbeit, Federstriche und ätherische Öle, optional mit Breathwork. Rubedo Spa in Minden.
-- [Das Kryo-Facial — kontrollierte Kälte für die Gesichtshaut](https://qivox1.github.io/magazin/kryo-facial-minden/): Kryo-Facial in Minden: ein kurzer, gezielter Kältereiz auf der Gesichtshaut — Mikrozirkulation, Tonus, dermale Frische. Kälte, übersetzt für den Teint.
+- [Das Kryo-Facial — kontrollierte Kälte für die Gesichtshaut](https://qivox1.github.io/magazin/kryo-facial-minden/): Kryo-Facial in Minden: ein kurzer, gezielter Kältereiz auf der Gesichtshaut — Frische, Wachheit, ein klarer Moment. Kälte, übersetzt für den Teint.
 
 ## Rechtliches
 - [Impressum](https://qivox1.github.io/impressum/) · [Datenschutz](https://qivox1.github.io/datenschutz/) · [KI-Bild-Hinweis](https://qivox1.github.io/ki-bilder/)
