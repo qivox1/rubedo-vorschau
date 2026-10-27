@@ -10,21 +10,19 @@ Gründerin: Monica Galletti, CIDESCO Beauty Therapist · Gründerin
 ## Die vier Dimensionen
 - [Cutis · Haut](https://qivox1.github.io/cutis/): Genombasierte Hautpflege & Gesichtsbehandlung. Hautanalyse, individuelle Pflegekonzepte und genombasierte Hautpflege — Pflege, die Ihrer biologischen Signatur folgt. Hier beginnt der Weg nach innen.
 - [Vigor · Kryo](https://qivox1.github.io/vigor/): Kryotherapie bis −196 °C · Frische & Tonus. Kälte bis −196 °C, rhythmische Kompression, wirkstoffgestützte Bandagen. Ein wacher Reiz, der Leichtigkeit hinterlässt.
-- [Corpus · Körper](https://qivox1.github.io/corpus/): Massage & rituelle Körperarbeit. Berührung mit Zeit: ayurvedische Öle, vulkanischer Basalt, das Signature-Ritual Opus.
+- [Corpus · Körper](https://qivox1.github.io/corpus/): Massage & rituelle Körperarbeit. Berührung mit Zeit: ayurvedische Öle, vulkanischer Basalt.
 - [Origo · Atem](https://qivox1.github.io/origo/): Atemarbeit & geführte Tiefenentspannung. Atem und Klang. Spiramen im Studio, Concentus für zu Hause.
 
 ## Anwendungen & Preise (inkl. MwSt.)
 ### Corpus
 - Abhyanga (Ayurvedische Ganzkörpermassage · 80 Min): 175 € · 80 Min
-- Hot Stone (Wärme-Ritual mit erwärmten Steinen · 75 Min): 175 € · 75 Min
-- Raindrop-Aroma-Ritual (Ätherische Essenzen & Federstriche · 90 Min): 195 € · 90 Min
-- Schwedische Massage (Klassische Ganzkörpermassage · 60 Min): 135 € · 60 Min
-- Opus (Massage · Atem · geführte Tiefenentspannung · Zweieinhalb Stunden): 490 € · Zweieinhalb Stunden · einmalig
+- Hot Stone (Wärme-Ritual mit erwärmten Steinen · 80 Min): 175 € · 80 Min
+- Raindrop-Aroma-Ritual (Ätherische Essenzen & Federstriche · 90 Min): 190 € · 90 Min
+- Schwedische Massage (Klassische Ganzkörpermassage · 60 Min): 130 € · 60 Min
 ### Cutis
 - DNA-Hautanalyse (Maßgeschneiderte Genanalyse für Ihre Haut): Ad personam · Einstieg: Konzept-Vorbereitung 160 €, anrechenbar
 - Das Gesichtsritual (Eine Architektur, vier Ausrichtungen · 50 Min): 130 € · 50 Min
 - Das vertiefte Ritual (Ausrichtung nach Wahl · 90 Min): 180 € · 90 Min
-- Limen (Das Schwellen-Ritual · Eine Stunde fünfzig): 290 € · Eine Stunde fünfzig
 - Renovatio — Hautzellerneuerung (Fruchtsäure & Enzyme · 45 Min): 105 € · 45 Min
 - Fruchtsäure-Routine (Salicyl- & Fruchtsäure · 30 Min): 75 € · 30 Min · Zyklus · 6 × 75 €
 ### Origo
@@ -37,12 +35,10 @@ Gründerin: Monica Galletti, CIDESCO Beauty Therapist · Gründerin
 - Kryo-Lokal (Gezielte Kälteanwendung · 15 Min): 36 € · Zyklus · 10 × 36 €
 - Kryo-Facial (Gesicht · über Make-up möglich · ca. 15 Min): 49 € · Zyklus · 10 × 49 €
 - Kryo-Facial · Gesicht, Hals & Dekolleté (Gesicht · Hals · Dekolleté · 20 Min): 75 € · Zyklus · 6 × 75 €
-- Kryo-Facial Signature (Gesicht · Hals · Dekolleté + Gesichtsmassage · 50 Min): 185 €
 - Presso-Massage · Beine (Presso-Massage · 50 Min): 65 € · Einzelne Sitzung
-- Presso-Massage · Ganzkörper (Beine · Bauch · Arme · 50 Min): 85 € · Einzelne Sitzung
+- Presso-Massage · Ganzkörper (Beine · Bauch · Arme · 50 Min): 80 € · Einzelne Sitzung
 - Beine Bandagen (Fünf Linien · nach Hautbild abgestimmt · 65 Min): 150 € · 65 Min · Zyklus · 6 × 150 €
 - Beine Bandagen & Presso-Massage (Dieselbe Anwendung, die Ruhephase genutzt · 75 Min): 170 € · 75 Min · Zyklus · 6 × 170 €
-- Velamen (Das Body Wrap Ritual · Ganzkörper · Zwei Stunden fünfzehn): 290 € · Zwei Stunden fünfzehn
 
 ## Studio
 - [Philosophie](https://qivox1.github.io/philosophie/): Haltung, Name & Methode
@@ -73,7 +69,7 @@ Gründerin: Monica Galletti, CIDESCO Beauty Therapist · Gründerin
 - [Peeling — die Haut und ihr Erneuerungsrhythmus](https://qivox1.github.io/magazin/peeling-minden/): Wie sich die Haut im Zellzyklus selbst erneuert — und wie ein abgestimmtes Enzym- oder Fruchtsäure-Peeling im Rubedo Spa in Minden ihn begleitet.
 - [Das Lymphsystem und die Haut — Presso-Massage und warum Druck zählt](https://qivox1.github.io/magazin/lymphsystem/): Lymphsystem und Haut: Was pneumatische Kompression bewirken kann und wie die Presso-Massage bei Rubedo ansetzt. Mit Rubedo Impuls.
 - [Longevity in Minden — Was modernes Wellness wirklich bedeutet](https://qivox1.github.io/magazin/wellness-minden/): Was Longevity wirklich bedeutet: Qualität der Jahre statt Anti-Aging — kleine Hebel für den Alltag und die vier Dimensionen des Rubedo Spa in Minden.
-- [Berührung — die Biologie der Massage](https://qivox1.github.io/magazin/beruehrung/): Was bewusster Körperkontakt mit Nervensystem, Oxytocin und der Haut machen kann. Neurobiologie der Berührung.
+- [Berührung als Wirkstoff — die Biologie der Massage](https://qivox1.github.io/magazin/beruehrung/): Was bewusster Körperkontakt mit Nervensystem, Oxytocin und der Haut machen kann. Neurobiologie der Berührung.
 - [Was bedeutet Rubedo?](https://qivox1.github.io/magazin/was-ist-rubedo/): Rubedo Spa ist ein Longevity-Studio in Minden, geführt von Monica Galletti: Haut, Vitalität, Körper und Atem als ein System.
 - [Raindrop-Massage — Die Sprache der Essenzen](https://qivox1.github.io/magazin/raindrop-massage/): Ein Aroma-Ritual aus Duft, Berührung und Zeit: VitaFlex-Fußarbeit, Federstriche und ätherische Öle, optional mit Breathwork. Rubedo Spa in Minden.
 - [Das Kryo-Facial — kontrollierte Kälte für die Gesichtshaut](https://qivox1.github.io/magazin/kryo-facial-minden/): Kryo-Facial in Minden: ein kurzer, gezielter Kältereiz auf der Gesichtshaut — Frische, Wachheit, ein klarer Moment. Kälte, übersetzt für den Teint.
