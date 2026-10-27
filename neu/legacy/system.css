@@ -1,0 +1,212 @@
+/* ============================================================
+   RUBEDO — MODEL SYSTEM (v2)   ·   system.css
+   Opt-in layer. Only pages that embody the refined "Astro"
+   system link this (Home, Longevity-Studio …). Legacy pages
+   (origo, audit, anwendungen v1 …) do NOT link it, so the
+   shared section-primitive class names never collide.
+
+   Principle: ONE cream ground · rhythm from full-bleed photos
+   + whitespace · brass eyebrows · crimson reserved (≈10% — the
+   primary button) · a single dark anchor = the footer.
+   Depends on tokens from styles.css (load styles.css first).
+   ============================================================ */
+
+/* ── SECTION PRIMITIVES ─────────────────── */
+.lg .sec      { padding: 120px 40px; }
+.lg .sec-in   { max-width: 1080px; margin: 0 auto; }
+.lg .col      { max-width: 62ch; }
+
+/* eyebrow — brass, no crimson */
+.lg .eb { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color:var(--gold); display: inline-flex; align-items: center; gap: 12px; margin-bottom: 26px; }
+.lg .eb::before { content: ''; width: 28px; height: 1px; background: var(--brass); opacity: .75; }
+
+.lg .h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 4vw, 48px); line-height: 1.12; letter-spacing: -.01em; color: var(--text-1); margin: 0; }
+
+/* ONE neutral break per page (warm cream-dark, never crimson) — the
+   single rhythm accent allowed on an otherwise cream ground. */
+.lg .sec.tone, .lg .section.tone { background: var(--cream-dark); }
+.lg .body { font-size: 16.5px; line-height: 1.85; color: #463F33; }
+.lg .body p { margin: 0; }
+.lg .body p + p { margin-top: 16px; }
+.lg .body em { font-style: italic; color: var(--text-1); }
+
+/* ── HERO (full-bleed photo) ─────────────── */
+.lg .hero { position: relative; min-height: 80vh; display: flex; align-items: flex-end; overflow: hidden; }
+.lg .hero .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.lg .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(28,20,16,.62) 0%, rgba(28,20,16,.20) 46%, rgba(28,20,16,0) 78%); }
+.lg .hero-in { position: relative; z-index: 2; max-width: 1080px; width: 100%; margin: 0 auto; padding: 0 40px 76px; }
+.lg .hero .eb { color: #ECD9AC; font-size: 11.5px; text-shadow: 0 1px 10px rgba(20,14,10,.6); }
+.lg .hero .eb::before { background: var(--burgundy); opacity: 1; }
+.lg .hero .eb .dia { color: var(--burgundy); margin: 0 .35em; font-size: .82em; vertical-align: middle; text-shadow: 0 1px 10px rgba(251,248,241,.3); }
+.lg .hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(44px, 6.6vw, 86px); line-height: 1.02; letter-spacing: -.02em; color: var(--cream); margin: 0 0 22px; }
+.lg .hero h1 .art { color: var(--brass-l); }
+.lg .hero .sub { font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(19px, 2.3vw, 25px); color: rgba(251,248,241,.92); line-height: 1.5; max-width: 54ch; margin: 0 0 30px; }
+.lg .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.lg .hero .btn-secondary { color: rgba(251,248,241,.9); border-color: rgba(251,248,241,.35); }
+.lg .hero .btn-secondary:hover { border-color: var(--cream); color: var(--cream); }
+
+/* ── FULL-BLEED PHOTO (the rhythm) ───────── */
+.lg .bleed { width: 100%; font-size: 0; }
+.lg .bleed img { width: 100%; height: auto; display: block; }
+
+/* ── DIMENSION CARDS (photo-led, on cream) ─
+   ARCHIV 28.07.2026 · nicht mehr im Live-Einsatz. Ersetzt durch
+   „DIMENSION SPINE" (Variante D): der Abstieg an einem Messing-
+   Rückgrat statt eines 2×2-Rasters — ein Raster liest sich als
+   Katalog (gleichzeitiger Vergleich), eine Folge als System.
+   Aufbewahrt als Arbeitsgedächtnis, nicht gelöscht. */
+.lg .dim-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 56px; }
+.lg .dim { background: #fff; border: .5px solid var(--border); border-radius: 2px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: inherit; position: relative; transition: box-shadow .3s, transform .3s, border-color .3s; }
+.lg .dim::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--brass); transform: scaleX(0); transform-origin: left; transition: transform .4s ease; z-index: 3; }
+.lg .dim:hover { box-shadow: 0 18px 46px rgba(28,23,18,.10); transform: translateY(-4px); border-color: var(--border-m); }
+.lg .dim:hover::before { transform: scaleX(1); }
+.lg .dim-img { position: relative; aspect-ratio: 16/10; overflow: hidden; }
+.lg .dim-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+.lg .dim:hover .dim-img img { transform: scale(1.04); }
+.lg .dim-body { padding: 30px 32px 32px; display: flex; flex-direction: column; flex: 1; }
+.lg .dim-essence { font-family: var(--sans); font-size:11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color:var(--gold); margin-bottom: 12px; }
+.lg .dim-name { font-family: var(--serif); font-size: 31px; font-weight: 400; line-height: 1.05; color: var(--text-1); margin-bottom: 11px; }
+.lg .dim-bridge { font-size:14px; color: var(--text-2); line-height: 1.45; margin-bottom: 16px; display: flex; align-items: baseline; gap: 9px; }
+.lg .dim-bridge::before { content: ''; flex-shrink: 0; width: 16px; height: 1px; background: var(--brass); transform: translateY(-4px); }
+.lg .dim-desc { font-size:14px; color:var(--text-2); line-height: 1.7; flex: 1; margin-bottom: 22px; }
+.lg .dim-link { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--brass); display: inline-flex; gap: 7px; transition: gap .2s; }
+.lg .dim:hover .dim-link { gap: 12px; }
+/* KI „cr" pin — LOCKED spec: Ø15px, dead-zone bottom-left, 8px offset */
+.lg .dim-cr { position: absolute; left: 8px; bottom: 8px; z-index: 4; width: 15px; height: 15px; border-radius: 50%; border: 1px solid rgba(251,248,241,.2); color: rgba(251,248,241,.45); font-family: var(--sans); font-size: 7px; font-weight: 600; text-transform: uppercase; letter-spacing: .02em; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: color .25s, border-color .25s; }
+.lg .dim-cr:hover { color: rgba(251,248,241,.95); border-color: rgba(251,248,241,.75); }
+  /* max. Mimetisierung sitewide: Ø13/6px + Geist-Opazität .45, in Hover voll lesbar */
+  .lg .dim-cr { width:13px; height:13px; font-size:6px; opacity:.45; transition: opacity .25s, color .25s, border-color .25s; }
+  .lg .dim-cr:hover { opacity:1; }
+
+/* ── DIMENSION SPINE · Abstieg von der Oberfläche zum Ursprung ──
+   Vier gleichwertige Zeilen an einem Messing-Rückgrat. Keine Rahmen,
+   keine Schatten, KEINE grauen Trennlinien: den Rhythmus macht der
+   Abstand, nicht das Gitter. Bildklingen alle gleich groß (Parität);
+   das Gefälle liegt in Wortmenge und wachsender Luft. */
+.lg .dim-spine { position: relative; margin-top: 58px; }
+.lg .dim-spine::before { content: ''; position: absolute; left: 27px; top: 12px; bottom: 30px; width: 1px; background: linear-gradient(to bottom, var(--brass) 0%, rgba(168,136,74,.55) 64%, rgba(168,136,74,0) 100%); }
+.lg .dim-row { display: grid; grid-template-columns: 56px 1fr 260px; align-items: center; gap: 34px; padding: 40px 0; text-decoration: none; color: inherit; transition: padding-left .35s ease; }
+.lg .dim-row.rev { grid-template-columns: 56px 260px 1fr; }
+.lg .dim-row.rev .dim-text { grid-column: 3; }
+.lg .dim-row.rev .dim-fig { grid-column: 2; grid-row: 1; }
+.lg .dim-row:hover { padding-left: 14px; }
+.lg .dim-row.d1 { padding-top: 10px; }
+.lg .dim-row.d2 { padding-top: 46px; }
+.lg .dim-row.d3 { padding-top: 54px; }
+.lg .dim-row.d4 { padding-top: 62px; padding-bottom: 16px; }
+.lg .dim-num { align-self: start; font-family: var(--serif); font-size: 30px; font-weight: 300; line-height: 1; color: transparent; width: 56px; text-align: center; background: var(--cream); padding: 4px 0 8px; position: relative; z-index: 2; transition: color .35s ease; }
+.lg .dim-num::before { content: ''; position: absolute; left: 50%; top: 12px; width: 7px; height: 7px; margin-left: -3.5px; background: var(--brass); transform: rotate(45deg); transition: opacity .35s ease; }
+.lg .dim-row:hover .dim-num { color: var(--brass); }
+.lg .dim-row:hover .dim-num::before { opacity: 0; }
+/* Schwellen · der Übergang selbst, nicht die Ankündigung des Nächsten */
+.lg .dim-schwelle { display: grid; grid-template-columns: 56px 1fr; gap: 34px; align-items: center; margin: 0; padding: 4px 0; }
+.lg .ds-node { position: relative; z-index: 2; width: 56px; height: 22px; background: var(--cream); }
+.lg .ds-node::before { content: ''; position: absolute; left: 50%; top: 50%; width: 5px; height: 5px; margin: -2.5px 0 0 -2.5px; border: 1px solid var(--brass); transform: rotate(45deg); }
+.lg .ds-text { font-family: var(--serif); font-style: italic; font-weight: 300; font-size: 17px; line-height: 1.5; color: var(--text-2); max-width: 42ch; }
+.lg .dim-text { min-width: 0; }
+.lg .dim-row .dim-name { display: block; font-family: var(--serif); font-size: clamp(30px, 3.6vw, 44px); font-weight: 400; line-height: 1.02; color: var(--text-1); margin-bottom: 10px; }
+.lg .dim-row .dim-lede { display: block; font-family: var(--serif); font-style: italic; font-weight: 300; font-size: 20px; line-height: 1.34; color: var(--burgundy); margin-bottom: 14px; }
+.lg .dim-row .dim-desc { display: block; font-size: 15.5px; line-height: 1.72; color: var(--text-2); max-width: 46ch; margin-bottom: 18px; flex: none; }
+.lg .dim-row .dim-link { font-size: 11.5px; color: var(--brass); }
+.lg .dim-row:hover .dim-link { gap: 13px; }
+.lg .dim-fig { position: relative; height: 300px; overflow: hidden; }
+.lg .dim-fig img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
+.lg .dim-row:hover .dim-fig img { transform: scale(1.04); }
+
+/* ── EDITORIAL PULL-QUOTE · open on cream (no box, no band) ── */
+.lg .sec.lift { background: var(--cream); }
+.lg .pullquote { max-width: 880px; margin: 104px auto 0; text-align: center; }
+.lg .pullquote blockquote { font-family: var(--serif); font-weight: 300; font-style: italic; font-size: clamp(26px, 3.6vw, 42px); line-height: 1.3; color: var(--text-1); margin: 0; letter-spacing: -.005em; }
+.lg .pullquote blockquote em { font-style: italic; color: var(--burgundy); }
+/* ARCHIV 28.07.2026 · .pq-mark (Anführungsglyphe) außer Gebrauch:
+   die typografische Behandlung IST das Anführungszeichen (LOCKED).
+   Regel behalten als Arbeitsgedächtnis — sie trug zugleich den
+   oberen Abstand (margin-bottom 32px), der jetzt an .pullquote hängt. */
+.lg .pullquote .pq-mark { display: block; font-family: var(--serif); font-size: 60px; line-height: 0; color: var(--brass); opacity: .55; margin-bottom: 32px; }
+.lg .pullquote .pq-attr { margin-top: 30px; font-family: var(--sans); font-size: 11px; font-weight: 500; letter-spacing: .15em; text-transform: uppercase; color: var(--burgundy); }
+
+/* ── TWO-COLUMN PORTRAIT BAND ────────────── */
+.lg .band { display: grid; grid-template-columns: .85fr 1.15fr; gap: 68px; align-items: center; }
+.lg .band figure { aspect-ratio: 4/4.7; overflow: hidden; border-radius: 2px; }
+.lg .band figure img { width: 100%; height: 100%; object-fit: cover; }
+.lg .band h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 3.6vw, 42px); line-height: 1.16; color: var(--text-1); margin: 0 0 20px; }
+.lg .band-attr { display: flex; align-items: center; gap: 14px; margin: 26px 0; }
+.lg .band-attr-line { width: 32px; height: 1px; background: var(--brass); }
+.lg .band-attr-name { font-size:14px; font-weight: 500; color: var(--text-1); }
+.lg .band-attr-role { font-size:14px; color:var(--text-2); }
+
+/* ── NUMBERED MODULE ROWS (Quattuor, methods) ── */
+.lg .quat { border-top: 1px solid var(--border); margin-top: 56px; }
+.lg .q-row { display: grid; grid-template-columns: 60px 1fr auto; gap: 36px; align-items: baseline; padding: 34px 6px; border-bottom: 1px solid var(--border); text-decoration: none; transition: padding-left .28s ease; }
+.lg .q-row:hover { padding-left: 16px; }
+.lg .q-num { font-family: var(--serif); font-size: 20px; color: var(--brass); }
+.lg .q-name { font-family: var(--serif); font-size: clamp(24px, 3vw, 32px); font-weight: 400; color: var(--text-1); line-height: 1.05; }
+.lg .q-name span { font-family: var(--sans); font-size: 14px; color: var(--text-2); font-weight: 400; }
+.lg .q-arrow { align-self: center; font-family: var(--serif); font-size: 22px; color:var(--text-2); transition: color .2s, transform .2s; }
+.lg .q-row:hover .q-arrow { color: var(--brass); transform: translateX(5px); }
+
+/* ── BORDERED CTA CARD (on cream) ────────── */
+.lg .cta-card { max-width: 1080px; margin: 0 auto; border: 1px solid var(--border-m); border-radius: 2px; padding: 60px 64px; display: grid; grid-template-columns: 1fr auto; gap: 52px; align-items: center; }
+.lg .cta-card .eb { margin-bottom: 18px; }
+.lg .cta-card h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(26px, 3vw, 38px); line-height: 1.12; color: var(--text-1); margin: 0 0 14px; }
+.lg .cta-card p { font-size: 15.5px; line-height: 1.72; color: var(--text-2); max-width: 48ch; margin: 0; }
+.lg .cta-card .cta-note { margin-top: 16px; font-family: var(--sans); font-size:14px; letter-spacing: .03em; color:var(--text-2); }
+.lg .cta-actions { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; white-space: nowrap; }
+.lg .cta-actions .ghost { font-family: var(--sans); font-size:14px; letter-spacing: .04em; color:var(--text-2); text-decoration: none; }
+.lg .cta-actions .ghost:hover { color: var(--brass); }
+
+/* ── MAGAZIN CARDS ───────────────────────── */
+.lg .mag-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 48px; }
+.lg .mag-card { border: 1px solid var(--border); border-radius: 2px; padding: 34px 34px 36px; text-decoration: none; transition: border-color .2s, background .2s; }
+.lg .mag-card:hover { border-color: var(--border-m); background: #fff; }
+.lg .mag-card .kat { font-size:11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color:var(--gold); }
+.lg .mag-card h4 { font-family: var(--serif); font-weight: 400; font-size: 23px; line-height: 1.22; color: var(--text-1); margin: 14px 0 8px; }
+.lg .mag-card p { font-size:14px; line-height: 1.6; color: var(--text-2); margin: 0; }
+.lg .mag-all { display: inline-block; margin-top: 32px; font-family: var(--sans); font-size:14px; letter-spacing: .04em; color:var(--text-2); text-decoration: none; transition: color .2s; }
+.lg .mag-all:hover { color: var(--brass); }
+
+/* ── DARK FOOTER · the single dark anchor ──
+   Restyles the SHARED footer structure (footer-inner / footer-col /
+   footer-bottom / footer-seek from styles.css) onto a dark ground.
+   A page opts in with <footer class="dark"> — no inner-HTML changes,
+   so every page keeps one identical footer markup. ── */
+.lg footer.dark { background: #221A14; border-top: none; }
+.lg footer.dark .footer-brand-name { color: var(--cream); }
+.lg footer.dark .footer-tagline { color: rgba(251,248,241,.5); }
+.lg footer.dark .footer-address { color: rgba(251,248,241,.55); }
+.lg footer.dark .footer-address a:hover { color: var(--brass-l); }
+.lg footer.dark .footer-col h5 { color: var(--brass-l); }
+.lg footer.dark .footer-col a { color: rgba(251,248,241,.66); }
+.lg footer.dark .footer-col a:hover { color: var(--cream); }
+.lg footer.dark .foot-bridge { color: rgba(251,248,241,.4); }
+.lg footer.dark .footer-bottom { border-top-color: rgba(251,248,241,.14); color: rgba(251,248,241,.45); }
+.lg footer.dark .footer-bottom a:hover { color: var(--cream); }
+.lg footer.dark .footer-legal { color: rgba(251,248,241,.45); }
+.lg footer.dark .footer-legal a { color: rgba(251,248,241,.55); }
+.lg footer.dark .footer-legal a:hover { color: var(--cream); }
+/* Cerca-Trova seek panel, recoloured for dark ground */
+.lg footer.dark .seek-trigger { border-color: rgba(196,165,104,.5); color: var(--brass-l); }
+.lg footer.dark .seek-trigger:hover { background: var(--brass); color: #221A14; border-color: var(--brass); }
+.lg footer.dark .seek-panel a { border-color: rgba(196,165,104,.45); color: var(--brass-l); }
+.lg footer.dark .seek-panel a:hover { background: var(--brass); color: #221A14; border-color: var(--brass); }
+
+@media (max-width: 860px) {
+  .lg .sec { padding: 80px 24px; }
+  .lg .hero-in { padding: 0 24px 52px; }
+  .lg .dim-cards { grid-template-columns: 1fr; }
+  .lg .dim-spine::before { display: none; }
+  .lg .dim-row, .lg .dim-row.rev { grid-template-columns: 1fr; gap: 18px; padding-top: 44px !important; }
+  .lg .dim-row.d1 { padding-top: 8px !important; }
+  .lg .dim-row.rev .dim-text { grid-column: 1; }
+  .lg .dim-row.rev .dim-fig { grid-column: 1; grid-row: auto; }
+  .lg .dim-num { width: auto; text-align: left; }
+  .lg .dim-schwelle { grid-template-columns: 1fr; gap: 0; padding: 26px 0 4px; }
+  .lg .ds-node { display: none; }
+  .lg .dim-fig { height: 230px; }
+  .lg .band { grid-template-columns: 1fr; gap: 40px; }
+  .lg .band figure { max-width: 360px; aspect-ratio: 4/4.4; }
+  .lg .mag-cards { grid-template-columns: 1fr; }
+  .lg .cta-card { grid-template-columns: 1fr; padding: 44px 30px; gap: 30px; }
+  .lg .q-row { grid-template-columns: 40px 1fr; }
+  .lg .q-arrow { display: none; }
+}

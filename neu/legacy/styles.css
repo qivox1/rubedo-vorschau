@@ -1,0 +1,416 @@
+/* ============================================================
+   RUBEDO SPA — Shared design system
+   Tokens & chrome extracted from the brand's existing pages.
+   ============================================================ */
+
+.lg *, .lg *::before, .lg *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.lg {
+  --cream:         #FBF8F1;
+  --cream-dark:    #F2EDE2;
+  --cream-deep:    #ECE5D6;
+  --burgundy:      #6B1E2A;
+  --burgundy-l:    #8B2F3E;
+  --burgundy-deep: #551521;
+  --burgundy-pale: #F5EAE8;
+  --brass:         #A8884A;
+  --brass-l:       #C4A568;
+  --gold:          #7A6830;
+  --gold-l:        #8B7A40;
+  --ink:           #1C1410;
+  --text-1:        #1C1712;
+  --text-2:        #5C5347;
+  --text-3:        #9A8E82;
+  --border:        rgba(28,23,18,.10);
+  --border-m:      rgba(28,23,18,.18);
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans:  'DM Sans', system-ui, sans-serif;
+  --maxw: 1080px;
+}
+
+.lg { background: var(--cream); scroll-behavior: smooth; }
+.lg {
+  background: var(--cream);
+  color: var(--text-1);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.lg ::selection { background: var(--burgundy); color: var(--cream); }
+
+/* ── TOPBAR ─────────────────────────────── */
+.lg .topbar {
+  background: var(--ink);
+  padding: 10px 40px;
+  display: flex; justify-content: center; align-items: center; gap: 10px;
+  font-size:14px; color: rgba(251,248,241,.55); letter-spacing: .03em;
+}
+.lg .topbar-dot { color: var(--burgundy-l); font-size: 7px; }
+.lg .topbar-soft { color: rgba(251,248,241,.34); }
+.lg .topbar-accent { color: var(--brass-l); letter-spacing: .08em; }
+.lg .topbar a { color: var(--brass-l); text-decoration: none; font-weight: 500; transition: color .2s; }
+.lg .topbar a:hover { color: var(--cream); }
+
+/* ── NAV ────────────────────────────────── */
+.lg nav.main {
+  background: rgba(251,248,241,.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: .5px solid var(--border);
+  padding: 0 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 70px; position: sticky; top: 0; z-index: 100;
+}
+.lg .nav-logo {
+  display: flex; align-items: center; gap: 11px; line-height: 1; text-decoration: none; flex-shrink: 0;
+  /* 1.8 · §„ogni <a> contenitore dichiara il proprio color": senza, un figlio futuro senza colore eredita il blu di sistema */
+  color: var(--text-1);
+}
+.lg .nav-logo img { width: 34px; height: 34px; display: block; }
+.lg .nav-logo-text { display: flex; flex-direction: column; }
+.lg .nav-logo-name {
+  font-family: var(--serif); font-size: 21px; font-weight: 500;
+  color: var(--text-1); letter-spacing: .05em; white-space: nowrap;
+}
+.lg .nav-logo-sub {
+  font-size: 8px; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--brass); margin-top: 3px; font-weight: 500; white-space: nowrap;
+}
+.lg .nav-links { display: flex; gap: 26px; list-style: none; align-items: center; margin-left: auto; }
+.lg .nav-links a {
+  font-size: 11px; font-weight: 500; letter-spacing: .13em; text-transform: uppercase;
+  color: var(--text-2); text-decoration: none; transition: color .2s; padding-bottom: 2px; white-space: nowrap;
+}
+.lg .nav-links a:not(.nav-cta):hover { color: var(--text-1); }
+.lg .nav-links a.active { color: var(--text-1); border-bottom: 1.5px solid var(--burgundy); }
+.lg .nav-cta {
+  background: var(--gold); color: var(--cream) !important;
+  padding: 10px 22px; border-radius: 2px;
+  font-size: 11px !important; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+  white-space: nowrap; transition: background .2s;
+}
+.lg .nav-cta:hover { background: var(--gold-l); }
+/* ── FIX v2-Portierung (2026-07-14, erneut 2026-10-19) ─────────────
+   .nav-cta wurde von ».nav-links a { padding-bottom: 2px }« per Spezifität
+   überstimmt und blieb display:inline → Button wirkte vertikal abgeschnitten.
+   Steht bewusst VOR den Media-Queries, damit Monicas Mobil-Regeln greifen. */
+.lg .nav-links a.nav-cta { display: inline-flex; align-items: center; padding: 10px 22px; }
+
+.lg .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.lg .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--text-1); margin: 4px 0; transition: .25s; }
+
+/* ── NAV DROPDOWN (Anwendungen) ─────────── */
+.lg .has-drop { position: relative; }
+.lg .drop-panel {
+  position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  margin-top: 12px; width: 288px;
+  background: var(--cream); border: .5px solid var(--border-m); border-radius: 3px;
+  box-shadow: 0 20px 50px rgba(28,23,18,.15); padding: 7px;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity .22s ease, transform .22s ease; z-index: 200;
+}
+/* invisible hover-bridge so the panel doesn't close in the gap */
+.lg .has-drop::before {
+  content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 18px;
+}
+.lg .has-drop:hover .drop-panel, .lg .has-drop:focus-within .drop-panel {
+  opacity: 1; visibility: visible; pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.lg .drop-item {
+  display: grid; grid-template-columns: 20px 1fr; gap: 11px; align-items: center;
+  padding: 8px 11px; border-radius: 2px; text-decoration: none; transition: background .18s;
+}
+.lg .drop-item:hover { background: var(--cream-dark); }
+.lg .drop-item::after, .lg .drop-cta::after { display: none !important; }
+.lg .drop-num { font-family: var(--serif); font-size:14px; color: var(--brass); letter-spacing: .04em; }
+.lg .drop-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.lg .drop-name { font-family: var(--serif); font-size: 15px; color: var(--text-1); line-height: 1.1; }
+.lg .drop-bridge { font-size: 11px; /* 28.07: da 10.5px — pavimento §Grandezze minime per micro-etichette */
+  /* 30.07: da --text-3 a --text-2. Su crema #9A8E82 dava ~2,6:1 di contrasto: sotto il minimo
+     WCAG AA (4,5:1) proprio nella riga che rende comprensibili i nomi latini — un beneficio
+     di comprensione che esisteva solo sulla carta. --text-2 su crema: ~7:1. */
+  color: var(--text-2); line-height: 1.3; white-space: normal; overflow-wrap: break-word; }
+.lg .drop-item:hover .drop-name { color: var(--burgundy); }
+.lg .drop-div { display: block; height: .5px; background: var(--border); margin: 6px 7px; }
+/* Magazin variant — no number column */
+.lg .drop-panel.mag .drop-item { grid-template-columns: 1fr; }
+.lg .drop-item.no-num { grid-template-columns: 1fr; }
+.lg .drop-cta {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  background: var(--burgundy); color: var(--cream) !important;
+  padding: 11px; border-radius: 2px; font-size: 11px !important; letter-spacing: .05em;
+  text-transform: uppercase; text-decoration: none; transition: background .2s;
+}
+.lg .drop-cta:hover { background: var(--burgundy-l); }
+
+/* ── BUTTONS ────────────────────────────── */
+.lg .btn-primary {
+  display: inline-block; background: var(--burgundy); color: var(--cream);
+  padding: 14px 30px; border-radius: 2px; font-size:14px; font-weight: 500;
+  letter-spacing: .04em; text-decoration: none; transition: background .2s, transform .2s;
+}
+.lg .btn-primary:hover { background: var(--burgundy-l); }
+.lg .btn-secondary {
+  display: inline-block; background: transparent; color: var(--text-2);
+  padding: 14px 30px; border-radius: 2px; border: .5px solid var(--border-m);
+  font-size:14px; font-weight: 400; text-decoration: none; transition: border-color .2s, color .2s;
+}
+.lg .btn-secondary:hover { border-color: var(--text-2); color: var(--text-1); }
+.lg .btn-ghost {
+  display: inline-flex; align-items: center; gap: 7px;
+  color: var(--burgundy); font-size:14px; font-weight: 500; letter-spacing: .03em;
+  text-decoration: none; transition: gap .2s;
+}
+.lg .btn-ghost:hover { gap: 12px; }
+
+/* button with Latin headline + clear German bridge (machine-readable) */
+.lg .btn-stack {
+  display: inline-flex; flex-direction: column; align-items: center; gap: 2px;
+  background: var(--burgundy); color: var(--cream); text-decoration: none;
+  padding: 12px 28px; border-radius: 2px; transition: background .2s;
+}
+.lg .btn-stack:hover { background: var(--burgundy-l); }
+.lg .btn-stack .bs-latin { font-family: var(--serif); font-size: 17px; font-weight: 500; letter-spacing: .03em; line-height: 1.1; }
+.lg .btn-stack .bs-bridge { font-size:11px; letter-spacing: .08em; text-transform: uppercase; color: rgba(251,248,241,.66); }
+
+/* ── BÜHNE + BRÜCKE LOCKUP ──────────────── */
+/* Latin (stage) term with a clear German/English bridge line beneath.
+   Used for pillar names, ritual names and key terms so humans AND
+   machines always get a plain-language anchor under the luxury word. */
+.lg .lockup { display: block; }
+.lg .lockup-essence { font-size:11px; font-weight: 500; letter-spacing: .15em; text-transform: uppercase; color:var(--gold); display: block; margin-bottom: 8px; }
+.lg .lockup-latin { font-family: var(--serif); font-weight: 400; line-height: 1.08; color: var(--text-1); display: block; }
+.lg .lockup-bridge {
+  display: block; margin-top: 7px; font-family: var(--sans); font-weight: 400;
+  font-size:14px; line-height: 1.45; color: var(--text-2); letter-spacing: .005em;
+}
+.lg .lockup-bridge::before { content: ''; display: inline-block; width: 16px; height: 1px; background: var(--brass); vertical-align: middle; margin-right: 9px; opacity: .8; }
+/* inline variant: Latin term + bridge in running text */
+.lg .term { font-style: normal; }
+.lg .term-latin { font-family: var(--serif); font-style: italic; color: var(--burgundy); font-weight: 500; }
+.lg .term .term-bridge { color: var(--text-2); }
+/* on dark backgrounds */
+.lg .on-dark .lockup-latin, .lg .lockup-latin.on-dark { color: var(--cream); }
+.lg .on-dark .lockup-bridge, .lg .lockup-bridge.on-dark { color: rgba(251,248,241,.66); }
+.lg .on-dark .lockup-essence, .lg .lockup-essence.on-dark { color: var(--brass-l); }
+
+/* lockup grid (e.g. Vier Säulen overview) */
+.lg .saeulen-philo { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border-m); border: .5px solid var(--border-m); border-radius: 2px; overflow: hidden; margin-top: 52px; }
+.lg .sp-card { background: #fff; padding: 30px 30px 32px; display: flex; flex-direction: column; }
+.lg .sp-card .lockup-latin { margin-top: 2px; }
+
+/* ── SECTION PRIMITIVES ─────────────────── */
+.lg .section { padding: 96px 40px; }
+.lg .section-inner { max-width: var(--maxw); margin: 0 auto; }
+.lg .section-alt { background: var(--cream-dark); }
+.lg .section-dark { background: var(--burgundy); color: var(--cream); }
+.lg .eyebrow {
+  font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase;
+  color:var(--gold); display: inline-block;
+}
+.lg .eyebrow-rule {
+  border-bottom: 1.5px solid var(--burgundy); color: var(--burgundy);
+  padding-bottom: 3px;
+}
+.lg .section-title {
+  font-family: var(--serif); font-weight: 400; line-height: 1.13;
+  font-size: clamp(30px, 4.2vw, 50px); letter-spacing: -.01em; color: var(--text-1);
+}
+.lg .section-lead {
+  font-family: var(--serif); font-size: clamp(18px, 2vw, 21px); font-weight: 300;
+  font-style: italic; color: var(--text-2); line-height: 1.55; max-width: 560px;
+}
+.lg .section-body { font-size: 16px; line-height: 1.82; color: var(--text-2); max-width: 600px; }
+.lg .section-body p + p { margin-top: 18px; }
+.lg .section-body strong { color: var(--text-1); font-weight: 500; }
+
+/* ── IMAGE FILL (real photos) ───────────── */
+.lg figure.img-fill { overflow: hidden; border-radius: 2px; position: relative; }
+.lg figure.img-fill img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ── IMAGE PLACEHOLDER (KI-generiert) ───── */
+.lg .ph {
+  background:
+    repeating-linear-gradient(135deg, transparent 0 11px, rgba(168,136,74,.05) 11px 12px),
+    var(--cream-deep);
+  border: .5px solid var(--border-m);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 9px; padding: 28px; text-align: center;
+}
+.lg .ph-tag {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size:11px; text-transform: uppercase; letter-spacing: .14em; color:var(--gold);
+}
+.lg .ph-desc { font-size:14px; color:var(--text-2); font-style: italic; line-height: 1.5; max-width: 320px; }
+.lg .ph.on-dark {
+  background:
+    repeating-linear-gradient(135deg, transparent 0 11px, rgba(196,165,104,.08) 11px 12px),
+    var(--burgundy-deep);
+  border-color: rgba(251,248,241,.16);
+}
+.lg .ph.on-dark .ph-desc { color: rgba(251,248,241,.5); }
+
+/* ── FOOTER ─────────────────────────────── */
+.lg footer { background: var(--cream-dark); border-top: .5px solid var(--border); padding: 64px 40px 36px; }
+.lg .footer-inner { max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: 2.2fr 1fr 1fr 1fr; gap: 44px; }
+.lg .footer-brand-name { font-family: var(--serif); font-size: 24px; font-weight: 500; letter-spacing: .04em; margin-bottom: 6px; }
+.lg .footer-tagline { font-size:14px; color:var(--text-2); font-style: italic; margin-bottom: 18px; letter-spacing: .02em; }
+/* ── MUTTERCLAIM · Kleinschreibung, ART in Gold ─────────────
+   Die Schreibweise im Quelltext bleibt kanonisch („smART Beauty for
+   Conscious Humans") — für JSON-LD, llms.txt und Hashtags. Klein wird
+   sie typografisch. Der Goldwert folgt dem Grund: --gold auf hellem
+   Kleintext, --brass auf großem Creme, --brass-l auf dunklem Foto.
+   KORREKTUR 28.07: zwei Werte, entschieden vom Grund — --brass-l auf
+   dunklem Grund (Hero-Foto, footer.dark), --gold auf Creme. --brass
+   hält den Kontrast in Textgrößen auf Creme nicht. */
+.lg .footer-tagline, .lg .pl-hero-claim, .lg .hero-claim { text-transform: lowercase; }
+.lg .footer-tagline .art { text-transform: uppercase; color: var(--brass-l); }
+.lg .pl-hero-claim .art { text-transform: uppercase; color: var(--gold); }
+.lg .hero-claim .art { text-transform: uppercase; }
+.lg .footer-address { font-size:14px; color:var(--text-2); line-height: 1.85; }
+.lg .footer-address a { color: inherit; text-decoration: none; }
+.lg .footer-address a:hover { color: var(--burgundy); }
+.lg .footer-col h5 { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color:var(--text-2); font-weight: 500; margin-bottom: 16px; }
+.lg .footer-col ul { list-style: none; }
+.lg .footer-col li { margin-bottom: 9px; }
+.lg .footer-col a { font-size:14px; color: var(--text-2); text-decoration: none; transition: color .2s; }
+.lg .footer-col a:hover { color: var(--burgundy); }
+.lg .foot-bridge { color:var(--text-2); font-size: 11px; letter-spacing: .02em; }
+
+/* ── FOOTER "CERCA TROVA" (hidden channels) ── */
+.lg .footer-seek { margin-top: 22px; }
+.lg .seek-trigger {
+  background: none; border: .5px solid rgba(168,136,74,.55); color:var(--gold);
+  font-family: var(--serif); font-style: italic; font-size:14px;
+  letter-spacing: .22em; text-transform: uppercase; padding: 8px 18px; border-radius: 2px;
+  cursor: pointer; transition: background .28s ease, color .28s ease, border-color .28s ease, letter-spacing .28s ease;
+}
+.lg .seek-trigger:hover { background: var(--brass); color: var(--cream); border-color: var(--brass); letter-spacing: .26em; }
+.lg .seek-trigger:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+.lg .seek-panel {
+  display: flex; flex-wrap: wrap; gap: 10px; max-width: 340px;
+  opacity: 0; max-height: 0; overflow: hidden; transform: translateY(-6px);
+  transition: opacity .4s ease, transform .4s ease, max-height .45s ease, margin-top .4s ease;
+  pointer-events: none; margin-top: 0;
+}
+.lg .footer-seek:hover .seek-panel,
+.lg .footer-seek:focus-within .seek-panel,
+.lg .footer-seek.open .seek-panel {
+  opacity: 1; max-height: 130px; margin-top: 16px; transform: none; pointer-events: auto;
+}
+.lg .seek-panel a {
+  width: 34px; height: 34px; border-radius: 50%;
+  border: .5px solid rgba(168,136,74,.5);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--brass); opacity: 0; transform: translateY(10px);
+  transition: background .22s ease, color .22s ease, border-color .22s ease, transform .35s ease, opacity .35s ease;
+}
+.lg .footer-seek:hover .seek-panel a,
+.lg .footer-seek:focus-within .seek-panel a,
+.lg .footer-seek.open .seek-panel a { opacity: 1; transform: none; }
+.lg .seek-panel a:nth-child(1){transition-delay:.04s}.lg .seek-panel a:nth-child(2){transition-delay:.08s}.lg .seek-panel a:nth-child(3){transition-delay:.12s}.lg .seek-panel a:nth-child(4){transition-delay:.16s}.lg .seek-panel a:nth-child(5){transition-delay:.2s}.lg .seek-panel a:nth-child(6){transition-delay:.24s}.lg .seek-panel a:nth-child(7){transition-delay:.28s}.lg .seek-panel a:nth-child(8){transition-delay:.32s}.lg .seek-panel a:nth-child(9){transition-delay:.36s}
+.lg .seek-panel a:hover { background: var(--brass); color: var(--cream); border-color: var(--brass); transform: translateY(-3px) !important; box-shadow: 0 6px 16px rgba(168,136,74,.3); }
+.lg .seek-panel a:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+.lg .seek-panel svg { width: 16px; height: 16px; display: block; fill: currentColor; }
+.lg .footer-bottom {
+  max-width: var(--maxw); margin: 40px auto 0; padding-top: 22px;
+  border-top: .5px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size:14px; color:var(--text-2); flex-wrap: wrap; gap: 10px;
+}
+.lg .footer-bottom a { color: inherit; text-decoration: none; }
+.lg .footer-bottom a:hover { color: var(--burgundy); }
+
+/* ── FOOTER · discreet legal row (always visible) ── */
+.lg .footer-legal { font-size:14px; color:var(--text-2); letter-spacing: .02em; }
+.lg .footer-legal a { color: var(--text-3); text-decoration: none; }
+.lg .footer-legal a:hover { color: var(--burgundy); }
+
+/* ── REVEAL ON SCROLL ───────────────────── */
+.lg .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.lg .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .lg .reveal { opacity: 1; transform: none; transition: none; }
+  .lg { scroll-behavior: auto; }
+}
+
+/* ── RESPONSIVE ─────────────────────────── */
+@media (max-width: 900px) {
+  .lg .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+  /* 30.07.2026 · la CAUSA misurata dell'overflow: i pannelli a tendina sono assoluti e
+     largi 288px — ancorati alla loro voce, l'ultimo (Magazin) sporge oltre il bordo destro
+     e un elemento assoluto che sporge conta nello scrollWidth anche da chiuso.
+     Sotto 900px l'ultimo ramo si apre allineato a destra: nessun cambio sopra 900px. */
+  .lg .nav-links > li.has-drop:last-of-type > .drop-panel { left: auto; right: 0; }
+}
+.lg .drop-panel { max-width: calc(100vw - 40px); }
+/* 30.07.2026 · BREAKPOINT DELLA NAV: 720 → 860px (content-based breakpoint).
+   La nav desktop (marca + 8 voci + CTA) entra in una riga solo oltre ~860px: fra 721
+   e 860 il layout desktop restava attivo pur non entrando → scrollWidth 754 su 721
+   di viewport = ~33px di overflow orizzontale (tablet in verticale, iPad 768px).
+   ⛔ Scartato un terzo stato „desktop compatto": porta le etichette sotto il pavimento
+   degli 11px e il bersaglio sotto i 44px. Due stati soli, mobile e desktop. */
+@media (max-width: 860px) {
+  .lg .topbar { display: none; }
+  .lg nav.main { padding: 0 20px; height: 62px; }
+  /* 29.07.2026 · Ⓐ: la PORTA resta in barra, il menù resta dietro l'hamburger.
+     Pannello a visibility (non transform/opacity): un figlio position:fixed dentro un
+     antenato trasformato si àncora all'antenato, e opacity:0 sul padre spegne il figlio
+     → con visibility il CTA può restare visibile fuori dal pannello chiuso. */
+  .lg .nav-links {
+    position: fixed; inset: 62px 0 auto 0; background: var(--cream);
+    flex-direction: column; align-items: flex-start; gap: 0; padding: 12px 20px 24px;
+    border-bottom: .5px solid var(--border); visibility: hidden;
+    transition: visibility .25s ease; box-shadow: 0 20px 40px rgba(28,23,18,.08);
+  }
+  .lg .nav-links.open { visibility: visible; }
+  .lg .nav-links li:has(> .nav-cta) {
+    position: fixed; top: 0; right: 66px; height: 62px; width: auto;
+    display: flex; align-items: center; visibility: visible;
+  }
+  .lg .nav-links a.nav-cta {
+    display: flex; align-items: center; min-height: 44px; padding: 0 16px;
+    font-size: 11px !important; margin-top: 0;
+  }
+  /* la barra deve contenere marca + porta + menù: la riga-chiave 8px sotto la
+     parola-marca è la larghezza più costosa (~160px) e la meno leggibile → cade prima. */
+  .lg .nav-logo-sub { display: none; }
+  .lg .nav-links li { width: 100%; }
+  .lg .nav-links a:not(.nav-cta) { display: block; padding: 14px 0; border-bottom: .5px solid var(--border); width: 100%; }
+  /* dropdown becomes static, always-open inside mobile menu */
+  .lg .has-drop { position: static; }
+  .lg .drop-panel {
+    position: static; opacity: 1; visibility: visible; pointer-events: auto;
+    transform: none; margin: 4px 0 6px; width: 100%;
+    box-shadow: none; border: none; background: transparent; padding: 0 0 0 6px;
+  }
+  /* 29.07.2026 · lo stato chiuso è `visibility:hidden` sulla ul, e visibility è
+     ri-attivabile dal discendente: questa regola la ri-dichiarava `visible` →
+     i pannelli restavano cliccabili sopra la pagina. Ora seguono il loro genitore. */
+  .lg .nav-links:not(.open) .drop-panel { visibility: hidden; pointer-events: none; }
+  .lg .has-drop::before { display: none; }
+  .lg .drop-item { padding: 10px 8px; }
+  .lg .drop-item::after { display: none !important; }
+  .lg .drop-cta { margin-top: 6px; }
+  .lg .nav-toggle { display: block; }
+}
+/* le regole di layout NON seguono la nav: restano a 720px, dove il contenuto le chiede */
+@media (max-width: 720px) {
+  .lg .section { padding: 64px 20px; }
+  .lg .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+  .lg footer { padding: 48px 20px 28px; }
+  .lg .saeulen-philo { grid-template-columns: 1fr; }
+}
+/* 29.07.2026 · sotto 460px resta l'emblema: è lui che assolve il ritorno alla home
+   (§in lettura serve la PORTA). La parola-marca torna appena c'è spazio.
+   Misurato: con la parola-marca visibile la barra si accavalla fino a ~455px. */
+@media (max-width: 460px) {
+  .lg .nav-logo-text { display: none; }
+  .lg .nav-links li:has(> .nav-cta) { right: 64px; }
+  .lg .nav-links a.nav-cta { padding: 0 14px; }
+}
